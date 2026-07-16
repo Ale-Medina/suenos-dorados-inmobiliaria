@@ -146,6 +146,16 @@ section{padding:104px 0 88px}
 .ph-4{background:radial-gradient(circle at 40% 40%,#2E3D22,#122019 72%)}
 .ph .estado{position:absolute;top:14px;left:14px;font-family:'Manrope';font-weight:700;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;background:var(--hueso);color:var(--verde);padding:5px 11px;border-radius:2px}
 .ph .cat{position:absolute;top:14px;right:14px;font-family:'Manrope';font-weight:700;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.35);color:var(--oro-claro);padding:5px 10px;border-radius:2px;backdrop-filter:blur(4px)}
+.ph-galeria{background:#122019}
+.ph-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease}
+.ph-foto.activa{opacity:1}
+.ph-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(18,32,25,.55);color:#fff;border:none;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1.1rem;line-height:1;display:flex;align-items:center;justify-content:center;z-index:2;opacity:0;transition:opacity .2s;backdrop-filter:blur(2px)}
+.ph-galeria:hover .ph-nav{opacity:1}
+.ph-prev{left:10px}
+.ph-next{right:10px}
+.ph-dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px;z-index:2}
+.ph-dot{width:6px;height:6px;padding:0;border:none;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer}
+.ph-dot.activo{background:#fff}
 .ficha-body{padding:20px 20px 0}
 .ficha h3{font-size:1.06rem;color:var(--verde);margin-bottom:4px}
 .ficha .zona{font-size:.84rem;color:var(--gris);margin-bottom:14px}
@@ -342,110 +352,9 @@ footer a:hover{color:var(--oro-claro)}
       <span class="tab-cat">Campos</span>
     </div>
 
-    <div class="grid-props">
-
-      <article class="ficha reveal">
-        <div class="ph ph-1"><span class="estado">Venta</span><span class="cat">Casa</span>
-          <svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><path d="M8 30 L32 10 L56 30"/><path d="M14 28 V52 H50 V28"/><rect x="27" y="38" width="10" height="14"/></svg>
-        </div>
-        <div class="ficha-body">
-          <h3>Casa en Barrio Sáenz Peña</h3>
-          <p class="zona">Pje. Mossi al 37, casi Av. Libertad — Capital</p>
-          <div class="specs">
-            <div class="fila"><span>Superficie</span><span>320 m²</span></div>
-            <div class="fila"><span>Ambientes</span><span>6</span></div>
-            <div class="fila"><span>Dormitorios</span><span>4</span></div>
-            <div class="fila"><span>Estado</span><span>Para reciclar</span></div>
-          </div>
-        </div>
-        <div class="ficha-foot"><div class="precio"><small>CONSULTAR</small>Precio</div><a href="#contacto">Consultar →</a></div>
-      </article>
-
-      <article class="ficha reveal">
-        <div class="ph ph-2"><span class="estado">Alquiler</span><span class="cat">Depto</span>
-          <svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><rect x="12" y="10" width="40" height="44"/><path d="M20 18h8M36 18h8M20 30h8M36 30h8M20 42h8M36 42h8"/></svg>
-        </div>
-        <div class="ficha-body">
-          <h3>Departamento Zona Tribunales</h3>
-          <p class="zona">Calle La Plata al 600 — Santiago del Estero</p>
-          <div class="specs">
-            <div class="fila"><span>Ambientes</span><span>2</span></div>
-            <div class="fila"><span>Dormitorios</span><span>1</span></div>
-            <div class="fila"><span>Baños</span><span>1</span></div>
-            <div class="fila"><span>Ideal para</span><span>Estudiantes</span></div>
-          </div>
-        </div>
-        <div class="ficha-foot"><div class="precio"><small>ARS / MES</small>Consultar</div><a href="#contacto">Consultar →</a></div>
-      </article>
-
-      <article class="ficha reveal">
-        <div class="ph ph-3"><span class="estado">Venta</span><span class="cat">Terreno</span>
-          <svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><path d="M10 50 L10 26 L54 26 L54 50"/><path d="M6 50h52"/><path d="M18 26v-8h12v8"/></svg>
-        </div>
-        <div class="ficha-body">
-          <h3>Lote en La Banda</h3>
-          <p class="zona">Zona 25 de Mayo, cerca de Bº Mama Antula — La Banda</p>
-          <div class="specs">
-            <div class="fila"><span>Medidas</span><span>20 x 70 m</span></div>
-            <div class="fila"><span>Servicios</span><span>Agua · Luz</span></div>
-            <div class="fila"><span>Ubicación</span><span>Los Martas - Yonda</span></div>
-            <div class="fila"><span>Escritura</span><span>Al día</span></div>
-          </div>
-        </div>
-        <div class="ficha-foot"><div class="precio"><small>CONSULTAR</small>Precio</div><a href="#contacto">Consultar →</a></div>
-      </article>
-
-      <article class="ficha reveal">
-        <div class="ph ph-4"><span class="estado">Alquiler</span><span class="cat">Galpón</span>
-          <svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><rect x="8" y="22" width="48" height="30"/><path d="M8 22 L32 8 L56 22"/><path d="M22 52v-16h8v16"/></svg>
-        </div>
-        <div class="ficha-body">
-          <h3>Galpón Comercial</h3>
-          <p class="zona">Congreso al 400, entre Santa Fe y Granadero Saavedra — Capital</p>
-          <div class="specs">
-            <div class="fila"><span>Superficie</span><span>600 m²</span></div>
-            <div class="fila"><span>Oficina</span><span>4x4</span></div>
-            <div class="fila"><span>Baño</span><span>1</span></div>
-            <div class="fila"><span>Uso ideal</span><span>Depósito / logística</span></div>
-          </div>
-        </div>
-        <div class="ficha-foot"><div class="precio"><small>CONSULTAR</small>Precio</div><a href="#contacto">Consultar →</a></div>
-      </article>
-
-      <article class="ficha reveal">
-        <div class="ph ph-2"><span class="estado">Venta</span><span class="cat">Campo</span>
-          <svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><path d="M8 46c6-10 14-10 20 0s14 10 20 0" /><path d="M8 54h48" /><path d="M20 40V16M20 22l-6-6M20 22l6-6M32 34V14M32 20l-6-6M32 20l6-6"/></svg>
-        </div>
-        <div class="ficha-body">
-          <h3>Campo — 1.000 Hectáreas</h3>
-          <p class="zona">Zona Los Juríes — Santiago del Estero</p>
-          <div class="specs">
-            <div class="fila"><span>Superficie</span><span>1.000 ha</span></div>
-            <div class="fila"><span>Uso</span><span>Agrícola — soja / cereales</span></div>
-            <div class="fila"><span>Estado</span><span>Trabajado, listo para producir</span></div>
-            <div class="fila"><span>Perfil</span><span>Inversión / escala</span></div>
-          </div>
-        </div>
-        <div class="ficha-foot"><div class="precio"><small>CONSULTAR</small>Precio</div><a href="#contacto">Consultar →</a></div>
-      </article>
-
-      <article class="ficha reveal">
-        <div class="ph ph-3"><span class="estado">Venta</span><span class="cat">Estancia</span>
-          <svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><path d="M10 52h44"/><path d="M16 52V30l16-14 16 14v22"/><path d="M26 52V38h12v14"/></svg>
-        </div>
-        <div class="ficha-body">
-          <h3>Estancia Ganadera</h3>
-          <p class="zona">Depto. Patiño, acceso Ruta Prov. 23 y 601 — Formosa</p>
-          <div class="specs">
-            <div class="fila"><span>Pasturas</span><span>Clavel y Pangola</span></div>
-            <div class="fila"><span>Receptividad</span><span>≈ 4.000 vacunos</span></div>
-            <div class="fila"><span>Aguadas</span><span>Sí, apotrerado</span></div>
-            <div class="fila"><span>Caminos</span><span>Amplia red interior</span></div>
-          </div>
-        </div>
-        <div class="ficha-foot"><div class="precio"><small>CONSULTAR</small>Precio</div><a href="#contacto">Consultar →</a></div>
-      </article>
-
+    <div class="grid-props" id="grid-props"></div>
+    <div class="reveal" style="text-align:center;margin-top:34px">
+      <button class="btn btn-borde" id="btn-ver-mas" type="button">Ver más propiedades</button>
     </div>
     <div class="nota-fotos reveal">Estas fichas usan datos reales de publicaciones ya hechas por la inmobiliaria. En cuanto tengamos las fotos definitivas de cada propiedad, reemplazamos los fondos ilustrados por las imágenes reales.</div>
   </div>
@@ -630,19 +539,462 @@ document.querySelectorAll('#menu a').forEach(a =>
   a.addEventListener('click', () => document.getElementById('menu').classList.remove('abierto'))
 );
 
-// Filtro simple de categorías (visual, sobre las fichas de ejemplo)
+// ---------- Catálogo de propiedades (datos) ----------
+function fotosDe(carpeta, cantidad) {
+  return Array.from({ length: cantidad }, (_, i) => `${carpeta}/foto_${i + 1}.png`);
+}
+const PROPIEDADES = [
+  // -------- Originales / corregidas --------
+  { titulo:'Casa en Barrio Sáenz Peña', operacion:'venta', categoria:'casa',
+    zona:'Pje. Mossi al 37, casi Av. Libertad — Capital',
+    specs:[['Superficie','320 m²'],['Ambientes','6'],['Dormitorios','4'],['Estado','Para reciclar']],
+    fotos:['foto_0.png','foto_1.png','foto_2.png','foto_3.png','foto_4.png'] },
+
+  { titulo:'Departamento Zona Tribunales', operacion:'alquiler', categoria:'departamento',
+    zona:'Calle La Plata al 600 — Santiago del Estero',
+    specs:[['Ambientes','2'],['Dormitorios','1'],['Baños','1'],['Ideal para','Estudiantes']],
+    fotos:fotosDe('plataal600', 5) },
+
+  { titulo:'Terreno 20x70 en 540 Viviendas', operacion:'venta', categoria:'terreno',
+    zona:'Zona 25 de Mayo (540 Viviendas), cerca de Bº Mama Antula — La Banda',
+    specs:[['Medidas','20 x 70 m']],
+    fotos:fotosDe('terrono540v', 1) },
+
+  { titulo:'Lote 20x50 en Las Marías', operacion:'venta', categoria:'terreno',
+    zona:'Las Marías — Yonda',
+    specs:[['Medidas','20 x 50 m'],['Servicios','Agua y luz']] },
+
+  { titulo:'Galpón Comercial', operacion:'alquiler', categoria:'galpon-local',
+    zona:'Congreso al 400, entre Santa Fe y Granadero Saavedra — Capital',
+    specs:[['Superficie','600 m²'],['Oficina','4x4'],['Baño','1'],['Uso ideal','Depósito / logística']] },
+
+  { titulo:'Campo — 1.000 Hectáreas', operacion:'venta', categoria:'campo-finca',
+    zona:'Zona Los Juríes — Santiago del Estero',
+    specs:[['Superficie','1.000 ha'],['Uso','Agrícola — soja / cereales'],['Estado','Trabajado, listo para producir'],['Perfil','Inversión / escala']] },
+
+  { titulo:'Estancia Ganadera', operacion:'venta', categoria:'campo-finca',
+    zona:'Depto. Patiño, acceso Ruta Prov. 23 y 601 — Formosa',
+    specs:[['Pasturas','Clavel y Pangola'],['Receptividad','≈ 4.000 vacunos'],['Aguadas','Sí, apotrerado'],['Caminos','Amplia red interior']] },
+
+  // -------- Casas — Venta --------
+  { titulo:'Casa 5 Ambientes', operacion:'venta', categoria:'casa',
+    zona:'Pedro Rizolo S/N, entre Rioja y Gaucho Rivero — Capital',
+    specs:[['Superficie','180 m² aprox'],['Ambientes','5'],['Dormitorios','2'],['Distribución','Living comedor, baño, cocina']],
+    fotos:fotosDe('pedrorizolo', 4) },
+
+  { titulo:'Casa 6 Ambientes', operacion:'venta', categoria:'casa',
+    zona:'Av. Libertad al 1900, frente a cajeros Banco Santiago — Capital',
+    specs:[['Superficie','600 m²'],['Dormitorios','3'],['Baños','1'],['Garage','1']],
+    fotos:fotosDe('libertad900', 5) },
+
+  { titulo:'Casa en Dorrego', operacion:'venta', categoria:'casa',
+    zona:'Dorrego al 100, entre Rivadavia y San Martín — Capital',
+    specs:[],
+    fotos:fotosDe('dorrego100', 2) },
+
+  { titulo:'Casa 3 Ambientes', operacion:'venta-alquiler', categoria:'casa',
+    zona:'Rodríguez y Garibaldi al 90 — Capital',
+    specs:[['Superficie','250 m² cubiertos'],['Dormitorios','3'],['Baños','2'],['Garage','1']],
+    fotos:fotosDe('rodriguezgaribaldi', 6) },
+
+  { titulo:'Casa en Belgrano Norte', operacion:'venta', categoria:'casa',
+    zona:'Belgrano (N) 256',
+    specs:[['Dormitorios','3'],['Ambientes','Oficina, living, comedor, cocina'],['Extras','Habitación de servicio, depósito'],['Exterior','Terraza']],
+    fotos:fotosDe('belgrano256', 6) },
+
+  { titulo:'Casa en Ruta 1, Camino a los Romanos', operacion:'venta', categoria:'casa',
+    zona:'Ruta 1, Camino a los Romanos',
+    specs:[['Ambientes','Living-comedor, cocina funcional'],['Baños','2'],['Exterior','Patio con piscina y quincho']],
+    fotos:fotosDe('casaruta1', 2) },
+
+  { titulo:'Casa en Calle Magallanes', operacion:'venta-alquiler', categoria:'casa',
+    zona:'Calle Magallanes — Capital',
+    specs:[['Dormitorios','6'],['Baños','4'],['Ambientes','Cocina equipada, living/comedor'],['Exterior','Garage, lavadero, jardín con asador']],
+    fotos:fotosDe('casamagallanes', 2) },
+
+  { titulo:'Casa en Av. Belgrano', operacion:'venta', categoria:'casa',
+    zona:'Av. Belgrano 244 — La Banda',
+    specs:[['Dormitorios','3'],['Baños','2'],['Extras','Salón comercial'],['Exterior','Piscina']],
+    fotos:fotosDe('belgrano244', 5) },
+
+  { titulo:'Casa en Bº Los Flores', operacion:'venta', categoria:'casa',
+    zona:'Calle Río Dulce, a mts de Av. Víctor Alcorta — Bº Los Flores',
+    specs:[['Dormitorios','2 amplios'],['Baño','Completo'],['Ambientes','Cocina comedor'],['Exterior','Patio']],
+    fotos:fotosDe('casabflores', 2) },
+
+  { titulo:'Casa en República de Líbano Sur', operacion:'venta', categoria:'casa',
+    zona:'República de Líbano Sur 567 — La Banda',
+    specs:[['Dormitorios','3'],['Exterior','Quincho, piscina y patio']],
+    fotos:fotosDe('libano567', 16) },
+
+  { titulo:'Casa en Calle Alem', operacion:'venta', categoria:'casa',
+    zona:'Calle Alem 1508 — La Banda',
+    specs:[['Potencial','Comercial'],['Exterior','Patio con asador'],['Ambientes','Baño y garage'],['Estructura','Preparada para 5 pisos']],
+    fotos:fotosDe('alem1508', 8) },
+
+  { titulo:'Casa en Granadero Saavedra', operacion:'venta', categoria:'casa',
+    zona:'Granadero Saavedra, entre Sarmiento y San Martín',
+    specs:[['Dormitorios','3'],['Baños','3'],['Extras','Salón comercial, cochera'],['Escritura','Papeles al día']],
+    fotos:fotosDe('granaderosavedra', 3) },
+
+  { titulo:'Casa en Calle La Plata', operacion:'venta', categoria:'casa',
+    zona:'Calle La Plata — Capital',
+    specs:[['Terreno','12 x 40 m'],['Dormitorios','3'],['Baños','2'],['Planta alta','Lavadero y habitación de servicio']],
+    fotos:fotosDe('laplata', 1) },
+
+  { titulo:'Casa en El Pinar de la Villa', operacion:'venta', categoria:'casa',
+    zona:'El Pinar de la Villa — El Zanjón',
+    specs:[['Entorno','Espacios de recreación, aire libre']],
+    fotos:fotosDe('pinardelavilla', 20) },
+
+  { titulo:'Casa en Calle Ricardo Rojas', operacion:'venta', categoria:'casa',
+    zona:'Calle Ricardo Rojas, a metros de la Jefatura de Policía y el Estadio Único — Capital',
+    specs:[['Terreno','11 x 30 m']],
+    fotos:fotosDe('ricardorojas', 6) },
+
+  { titulo:'Casa Finca en San Carlos', operacion:'venta', categoria:'casa',
+    zona:'Zona San Carlos — La Banda',
+    specs:[],
+    fotos:fotosDe('fincasancarlos', 10) },
+
+  { titulo:'Casa a mts de Av. Lugones', operacion:'venta', categoria:'casa',
+    zona:'A 100 mts de Av. Lugones',
+    specs:[['Terreno','10 x 30 m']],
+    fotos:fotosDe('lugonesal100', 4) },
+
+  { titulo:'Propiedad para Demoler', operacion:'venta', categoria:'terreno',
+    zona:'San Martín 2020 — Capital',
+    specs:[['Frente','12,50 m'],['Fondo','22,50 m'],['Ideal para','Desarrollo o proyecto comercial']] },
+
+  { titulo:'Propiedad con Local Comercial', operacion:'venta', categoria:'galpon-local',
+    zona:'Av. 9 de Julio 275 — Capital',
+    specs:[['Frente','7 m'],['Profundidad','26 m']] },
+
+  { titulo:'Casa en Córdoba', operacion:'venta', categoria:'casa',
+    zona:'Provincia de Córdoba',
+    specs:[], descripcion:'Consultar detalles.',
+    fotos:fotosDe('casacordoba', 8) },
+
+  { titulo:'Hotel en Actividad', operacion:'venta', categoria:'galpon-local',
+    zona:'Ubicación a consultar',
+    specs:[['Estado','Totalmente equipado y en funcionamiento'],['Rentabilidad','Alta'],['Potencial','Turístico']] },
+
+  // -------- Casas — Alquiler --------
+  { titulo:'Casa en Bº Cabildo', operacion:'alquiler', categoria:'casa',
+    zona:'Barrio Cabildo',
+    specs:[] },
+
+  { titulo:'Casa en Pasaje Gorriti', operacion:'alquiler', categoria:'casa',
+    zona:'Pasaje Gorriti, a 100 mts de Av. Lugones',
+    specs:[['Dormitorios','3'],['Ambientes','Cocina independiente, living comedor'],['Extras','Salón con posible uso comercial'],['Exterior','Patio y cochera']],
+    fotos:fotosDe('pjegorriti', 2) },
+
+  { titulo:'Casa en Monteagudo', operacion:'alquiler', categoria:'casa',
+    zona:'Monteagudo 347 — La Banda',
+    specs:[['Dormitorios','3'],['Ambientes','Cocina, living-comedor'],['Baño','Amplio'],['Exterior','Jardín, espacio p/vehículo, lavadero']],
+    fotos:fotosDe('monteagudo347', 5) },
+
+  // -------- Departamentos — Alquiler --------
+  { titulo:'Departamentos a Estrenar', operacion:'alquiler', categoria:'departamento',
+    zona:'Av. Belgrano Sur 1400, zona UNSE',
+    specs:[['Dormitorios','1 o 2'],['Edificio','Ascensor, cochera'],['Ambientes','Cocina y baño'],['Estado','A estrenar']] },
+
+  { titulo:'Departamento en Calle Bolivia', operacion:'alquiler', categoria:'departamento',
+    zona:'Bolivia 150 — Capital',
+    specs:[['Dormitorios','2'],['Ambientes','Living comedor amplio, cocina, baño']] },
+
+  { titulo:'Monoambiente Amoblado', operacion:'alquiler', categoria:'departamento',
+    zona:'Perú 554 — Capital',
+    specs:[['Tipo','Monoambiente amoblado'],['Equipamiento','Aire acondicionado, TV, heladera'],['Cocina','Completa'],['Capacidad','Hasta 2 personas']] },
+
+  { titulo:'Departamento en Perú y Rivadavia', operacion:'alquiler', categoria:'departamento',
+    zona:'Perú y Av. Rivadavia — Capital',
+    specs:[['Dormitorios','2, con placar'],['Ambientes','Cocina funcional, living comedor integrado'],['Baño','Completo']] },
+
+  { titulo:'Departamento cerca de Ciudad Universitaria', operacion:'alquiler', categoria:'departamento',
+    zona:'Calle Perú, a 8 cuadras de Ciudad Universitaria — Córdoba',
+    specs:[['Dormitorios','1'],['Ambientes','Baño, cocina comedor'],['Extras','Garage, patio'],['Ideal para','Estudiantes']] },
+
+  { titulo:'Departamentos Nuevos a Estrenar', operacion:'alquiler', categoria:'departamento',
+    zona:'Av. Belgrano Sur 1409 — Capital',
+    specs:[['Dormitorios','1 o 2, con placard y baulera'],['Edificio','Cochera, ascensor'],['Estado','A estrenar']] },
+
+  { titulo:'Departamento en Pedro León Gallo', operacion:'alquiler', categoria:'departamento',
+    zona:'Pedro León Gallo y Cabanillas — Capital',
+    specs:[] },
+
+  // -------- Departamentos — Venta --------
+  { titulo:'Departamento en Barrio Palomar', operacion:'venta', categoria:'departamento',
+    zona:'Barrio Palomar — Capital',
+    specs:[['Habitaciones','4 (1 con aire acond.)'],['Ambientes','Living con balcón, comedor'],['Cocina','Sí'],['Baño','Completo, con lavadero']] },
+
+  { titulo:'Departamento en Barrio Autonomía', operacion:'venta', categoria:'departamento',
+    zona:'Barrio Autonomía — Capital',
+    specs:[['Ambientes','Living-comedor integrado'],['Cocina','Equipada'],['Dormitorios','Cómodos'],['Baño','Completo']] },
+
+  { titulo:'Departamento en Calle Naciones Unidas', operacion:'venta', categoria:'departamento',
+    zona:'Calle Naciones Unidas — Capital',
+    specs:[['Perfil','Funcional y luminoso'],['Ubicación','Zona estratégica']] },
+
+  { titulo:'Departamento en Av. Moreno y Av. Libertad', operacion:'venta', categoria:'departamento',
+    zona:'Av. Moreno y Av. Libertad — Capital',
+    specs:[] },
+
+  { titulo:'Departamento en Caballito', operacion:'venta', categoria:'departamento',
+    zona:'Federico García Lorca — Caballito, Buenos Aires',
+    specs:[] },
+
+  // -------- Locales y Galpones --------
+  { titulo:'Salón Comercial', operacion:'alquiler', categoria:'galpon-local',
+    zona:'Calle Salta 572',
+    specs:[['Superficie','Aprox. 3 x 3 m'],['Ideal para','Oficina, consultorio o emprendimiento']] },
+
+  { titulo:'Local Comercial en Salta', operacion:'alquiler', categoria:'galpon-local',
+    zona:'Salta 572, entre Roca y Gorriti',
+    specs:[['Superficie','80 m²']] },
+
+  { titulo:'Local en 9 de Julio', operacion:'alquiler', categoria:'galpon-local',
+    zona:'9 de Julio 579, entre Roca y Olaechea',
+    specs:[['Superficie','18 m² aprox'],['Ideal para','Emprendimientos u oficinas']] },
+
+  { titulo:'Salón en Avellaneda', operacion:'alquiler', categoria:'galpon-local',
+    zona:'Avellaneda al 300',
+    specs:[['Superficie','300 m²'],['Baños','2'],['Extras','Kitchenette'],['Uso','Múltiples usos']] },
+
+  { titulo:'Local en Galería Vía Bianca', operacion:'alquiler', categoria:'galpon-local',
+    zona:'Independencia 187, Galería Vía Bianca',
+    specs:[['Medidas','4,50 x 5 m'],['Perfil','Buen movimiento y visibilidad']] },
+
+  { titulo:'Local Comercial en Av. Pedro León Gallo', operacion:'alquiler', categoria:'galpon-local',
+    zona:'Av. Pedro León Gallo 673',
+    specs:[] },
+
+  { titulo:'Local Comercial en Av. Moreno', operacion:'venta', categoria:'galpon-local',
+    zona:'Av. Moreno',
+    specs:[['Medidas','11 x 40 m'],['Divisiones','2'],['Baños','2'],['Extras','Oficinas']] },
+
+  { titulo:'Galpón en Bº El Cruce', operacion:'alquiler', categoria:'galpon-local',
+    zona:'Magdalenas 660 esq. Triunvirato, Bº El Cruce — La Banda',
+    specs:[['Medidas','10 x 15 m'],['Oficina','2 x 2 m'],['Baño','1']] },
+
+  { titulo:'Galpón en Ruta 1, Los Romanos', operacion:'venta', categoria:'galpon-local',
+    zona:'Ruta 1 — Los Romanos',
+    specs:[['Medidas','12 x 30 m, con entrepiso'],['Estado','Excelente'],['Uso','Adaptable a distintos rubros']] },
+
+  { titulo:'Cancha de Fútbol 5', operacion:'alquiler', categoria:'galpon-local',
+    zona:'Calle Ecuador — La Banda',
+    specs:[['Extras','Asador'],['Baño','Completo'],['Espacio','Amplio, recreativo']] },
+
+  // -------- Lotes y Terrenos — Venta --------
+  { titulo:'Lotes 35x50 junto a El Timbó', operacion:'venta', categoria:'terreno',
+    zona:'Junto al barrio privado El Timbó',
+    specs:[['Medidas','35 x 50 m']] },
+
+  { titulo:'Lotes 12x42 en Camino a los Romanos', operacion:'venta', categoria:'terreno',
+    zona:'A 30 mts de Ruta 1, Camino a los Romanos',
+    specs:[['Medidas','12 x 42 m (2 lotes)'],['Servicios','Agua y luz'],['Estado','Nivelados, listos para escriturar'],['Financiación','A convenir']] },
+
+  { titulo:'Lote 20x53 en La Bajada', operacion:'venta', categoria:'terreno',
+    zona:'Distrito El Polear, La Bajada — Dpto. Banda',
+    specs:[['Medidas','20 x 53 m'],['Escritura','Papeles al día'],['Financiación','A convenir, se recibe vehículo']] },
+
+  { titulo:'Lote 24x30 en El Zanjón', operacion:'venta', categoria:'terreno',
+    zona:'Zona El Zanjón, a mts de la comisión municipal',
+    specs:[['Medidas','24 x 30 m'],['Entorno','Buen entorno, fácil acceso']] },
+
+  { titulo:'Lotes 10x30 en Altos del Golf', operacion:'venta', categoria:'terreno',
+    zona:'Calle los Chañares, Bº Altos del Golf — zona norte',
+    specs:[['Medidas','10 x 30 m (2 lotes)']] },
+
+  { titulo:'Lote 10x30 Listo para Escriturar', operacion:'venta', categoria:'terreno',
+    zona:'Ubicación a consultar',
+    specs:[['Medidas','10 x 30 m'],['Escritura','Lista para escriturar']] },
+
+  { titulo:'Lote con Casa 15x100', operacion:'venta', categoria:'terreno',
+    zona:'Ubicación a consultar',
+    specs:[['Medidas','15 x 100 m'],['Incluye','Casa']] },
+
+  { titulo:'Lotes 10x44 en María Magdalena', operacion:'venta', categoria:'terreno',
+    zona:'Barrio privado María Magdalena, a 5 min de Ampliación 1° de Mayo',
+    specs:[['Medidas','10 x 44 m']] },
+
+  { titulo:'Loteo Hamburgo', operacion:'venta', categoria:'terreno',
+    zona:'Barrio Hamburgo',
+    specs:[] },
+
+  { titulo:'Terreno 3 Hectáreas', operacion:'venta', categoria:'terreno',
+    zona:'Zona El Zanjón',
+    specs:[['Superficie','3 hectáreas']] },
+
+  // -------- Campos, Fincas y Estancias — Venta --------
+  { titulo:'Finca en La Dársena', operacion:'venta', categoria:'campo-finca',
+    zona:'La Dársena',
+    specs:[['Dormitorios','2'],['Baños','2 + antebaño'],['Ambientes','Living amplio, comedor, cocina c/gas subterráneo'],['Exterior','Depósito, patios y piscina']] },
+
+  { titulo:'Finca en Vuelta la Barranca', operacion:'venta', categoria:'campo-finca',
+    zona:'Vuelta la Barranca',
+    specs:[['Medidas','25 x 50 m'],['Exterior','Piscina revestida, quincho cerrado'],['Perímetro','Alambrado']] },
+
+  { titulo:'Finca en Barrio Jardín', operacion:'venta', categoria:'campo-finca',
+    zona:'Barrio Jardín (Los Pinos)',
+    specs:[] },
+
+  { titulo:'Finca en Alquiler de Verano', operacion:'alquiler', categoria:'campo-finca',
+    zona:'Ubicación a consultar',
+    specs:[['Modalidad','Temporada de verano']] },
+
+  { titulo:'Campo 150 Hectáreas', operacion:'venta', categoria:'campo-finca',
+    zona:'Remes Sud',
+    specs:[['Superficie','150 hectáreas']] },
+
+  { titulo:'Campo 624 Hectáreas', operacion:'venta', categoria:'campo-finca',
+    zona:'Ubicación a consultar',
+    specs:[['Superficie','624 hectáreas']] },
+
+  { titulo:'Campo 1.400 Hectáreas', operacion:'venta', categoria:'campo-finca',
+    zona:'Departamento Ibarra',
+    specs:[['Superficie','1.400 hectáreas'],['Perfil','Gran inversión']] },
+
+  { titulo:'Campo Agrícola 1.949 Hectáreas', operacion:'venta', categoria:'campo-finca',
+    zona:'Zona de alta productividad',
+    specs:[['Superficie','1.949 hectáreas'],['Uso','Agrícola'],['Acceso','Ruta pavimentada']] },
+
+  { titulo:'Campo 300 Hectáreas', operacion:'venta', categoria:'campo-finca',
+    zona:'Ciudad de Fernández',
+    specs:[['Superficie','300 hectáreas limpias']] },
+
+  { titulo:'Campo 459 Hectáreas', operacion:'venta', categoria:'campo-finca',
+    zona:'Sobre Ruta Nacional 64',
+    specs:[['Superficie','459 hectáreas']] },
+
+  { titulo:'Campo 275 Hectáreas', operacion:'venta', categoria:'campo-finca',
+    zona:'Zona Chaco, al norte del Dpto. Río Primero — Córdoba',
+    specs:[['Superficie','275 hectáreas']] },
+
+  { titulo:'Estancia Mixta 3.570 Hectáreas', operacion:'venta', categoria:'campo-finca',
+    zona:'Zona Tobas — Santiago del Estero',
+    specs:[['Superficie','3.570 hectáreas'],['Perfil','Campo mixto']] },
+];
+
+// id (slug) único + rotación de fondos ph-1..ph-4
+function slugify(s) {
+  return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+}
+(function asignarIds() {
+  const usados = new Set();
+  PROPIEDADES.forEach((p, i) => {
+    let base = slugify(p.titulo), id = base, n = 2;
+    while (usados.has(id)) { id = `${base}-${n++}`; }
+    usados.add(id);
+    p.id = id;
+    p.ph = (i % 4) + 1;
+  });
+})();
+
+const CAT_LABEL = {casa:'Casa', departamento:'Depto', terreno:'Terreno', 'galpon-local':'Galpón', 'campo-finca':'Campo'};
+const OP_LABEL = {venta:'Venta', alquiler:'Alquiler', 'venta-alquiler':'Venta / Alquiler'};
+const ICONOS = {
+  casa: '<svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><path d="M8 30 L32 10 L56 30"/><path d="M14 28 V52 H50 V28"/><rect x="27" y="38" width="10" height="14"/></svg>',
+  departamento: '<svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><rect x="12" y="10" width="40" height="44"/><path d="M20 18h8M36 18h8M20 30h8M36 30h8M20 42h8M36 42h8"/></svg>',
+  terreno: '<svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><path d="M10 50 L10 26 L54 26 L54 50"/><path d="M6 50h52"/><path d="M18 26v-8h12v8"/></svg>',
+  'galpon-local': '<svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><rect x="8" y="22" width="48" height="30"/><path d="M8 22 L32 8 L56 22"/><path d="M22 52v-16h8v16"/></svg>',
+  'campo-finca': '<svg viewBox="0 0 64 64" fill="none" stroke="#E6C687" stroke-width="1.6"><path d="M8 46c6-10 14-10 20 0s14 10 20 0" /><path d="M8 54h48" /><path d="M20 40V16M20 22l-6-6M20 22l6-6M32 34V14M32 20l-6-6M32 20l6-6"/></svg>'
+};
+
+function waLink(titulo) {
+  const msg = `Hola, me interesa la propiedad "${titulo}". ¿Me pasás más información?`;
+  return `https://wa.me/5493854089121?text=${encodeURIComponent(msg)}`;
+}
+
+function renderPh(p) {
+  const badges = `<span class="estado">${OP_LABEL[p.operacion]}</span><span class="cat">${CAT_LABEL[p.categoria]}</span>`;
+  if (!p.fotos || !p.fotos.length) {
+    return `<div class="ph ph-${p.ph}">${badges}
+        ${ICONOS[p.categoria]}
+      </div>`;
+  }
+  const imgs = p.fotos.map((src, i) => `<img class="ph-foto${i === 0 ? ' activa' : ''}" src="${src}" alt="${p.titulo} — foto ${i + 1}" loading="lazy">`).join('');
+  const dots = p.fotos.length > 1
+    ? `<div class="ph-dots">${p.fotos.map((_, i) => `<button class="ph-dot${i === 0 ? ' activo' : ''}" type="button" data-i="${i}" aria-label="Foto ${i + 1}"></button>`).join('')}</div>`
+    : '';
+  const nav = p.fotos.length > 1
+    ? `<button class="ph-nav ph-prev" type="button" aria-label="Foto anterior">‹</button>
+        <button class="ph-nav ph-next" type="button" aria-label="Foto siguiente">›</button>`
+    : '';
+  return `<div class="ph ph-galeria" data-idx="0">
+        ${imgs}
+        ${badges}
+        ${nav}
+        ${dots}
+      </div>`;
+}
+
+function renderFicha(p) {
+  const filas = p.specs.slice(0, 4);
+  if (filas.length < 4 && p.descripcion) filas.push(['Detalle', p.descripcion]);
+  const specsHtml = filas.length
+    ? `<div class="specs">${filas.map(([l,v]) => `<div class="fila"><span>${l}</span><span>${v}</span></div>`).join('')}</div>`
+    : '';
+  return `<article class="ficha reveal" data-categoria="${p.categoria}" data-id="${p.id}">
+      ${renderPh(p)}
+      <div class="ficha-body">
+        <h3>${p.titulo}</h3>
+        <p class="zona">${p.zona}</p>
+        ${specsHtml}
+      </div>
+      <div class="ficha-foot"><div class="precio"><small>CONSULTAR</small>Precio</div><a href="${waLink(p.titulo)}" target="_blank" rel="noopener">Consultar →</a></div>
+    </article>`;
+}
+
+// ---------- Render + filtro por categoría + paginado "Ver más" ----------
+const PAGE_SIZE = 9;
+const gridProps = document.getElementById('grid-props');
+const btnVerMas = document.getElementById('btn-ver-mas');
+let filtroActivo = null;
+let visibles = PAGE_SIZE;
+
+// Navegación de la galería de fotos (delegada: las fichas se re-renderizan)
+gridProps.addEventListener('click', (e) => {
+  const nav = e.target.closest('.ph-nav');
+  const dot = e.target.closest('.ph-dot');
+  if (!nav && !dot) return;
+  const ph = e.target.closest('.ph-galeria');
+  if (!ph) return;
+  const fotos = ph.querySelectorAll('.ph-foto');
+  const dots = ph.querySelectorAll('.ph-dot');
+  let idx = parseInt(ph.dataset.idx, 10) || 0;
+  if (nav) idx = nav.classList.contains('ph-next') ? (idx + 1) % fotos.length : (idx - 1 + fotos.length) % fotos.length;
+  else idx = parseInt(dot.dataset.i, 10);
+  ph.dataset.idx = idx;
+  fotos.forEach((f, i) => f.classList.toggle('activa', i === idx));
+  dots.forEach((d, i) => d.classList.toggle('activo', i === idx));
+});
+
+function renderCatalogo() {
+  const filtradas = filtroActivo ? PROPIEDADES.filter(p => p.categoria === filtroActivo) : PROPIEDADES;
+  const mostrar = filtradas.slice(0, visibles);
+  gridProps.innerHTML = mostrar.map(renderFicha).join('');
+  gridProps.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  btnVerMas.style.display = visibles < filtradas.length ? '' : 'none';
+}
+
 const tabs = document.querySelectorAll('.tab-cat');
-const mapaCat = {'Todas':null,'Casas':'Casa','Departamentos':'Depto','Terrenos':'Terreno','Galpones':'Galpón','Campos':['Campo','Estancia']};
+const mapaCat = {'Todas':null,'Casas':'casa','Departamentos':'departamento','Terrenos':'terreno','Galpones':'galpon-local','Campos':'campo-finca'};
 tabs.forEach(tab => tab.addEventListener('click', () => {
   tabs.forEach(t => t.classList.remove('activo'));
   tab.classList.add('activo');
-  const filtro = mapaCat[tab.textContent];
-  document.querySelectorAll('.ficha').forEach(f => {
-    const cat = f.querySelector('.cat').textContent;
-    const visible = !filtro || (Array.isArray(filtro) ? filtro.includes(cat) : cat === filtro);
-    f.style.display = visible ? '' : 'none';
-  });
+  filtroActivo = mapaCat[tab.textContent];
+  visibles = PAGE_SIZE;
+  renderCatalogo();
 }));
+
+btnVerMas.addEventListener('click', () => {
+  visibles += PAGE_SIZE;
+  renderCatalogo();
+});
+
+renderCatalogo();
 </script>
 
 </body>
