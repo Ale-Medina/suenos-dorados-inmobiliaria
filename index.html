@@ -227,9 +227,18 @@ section{padding:104px 0 88px}
 .horario{font-family:'Manrope';font-size:.74rem;letter-spacing:.1em;color:#8A9389;margin-top:34px}
 
 footer{background:#0D1712;color:#8A9389;padding:34px 0;font-size:.83rem}
-footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 footer a{color:#C7D0C9}
 footer a:hover{color:var(--oro-claro)}
+.social{display:flex;gap:16px;align-items:center}
+.social a{display:inline-flex;color:#C7D0C9;transition:color .2s,transform .2s}
+.social a:hover{color:var(--oro-claro);transform:translateY(-2px)}
+
+/* ---------- Certificaciones (sección campos) ---------- */
+.certificaciones{display:flex;align-items:center;gap:14px;margin-top:20px;padding-top:18px;border-top:1px solid rgba(230,198,135,.18);flex-wrap:wrap}
+.certificaciones span{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#C7D0C9;font-weight:700}
+.certificaciones .logos{display:flex;gap:10px}
+.certificaciones .logos img{height:34px;width:auto;border-radius:4px;background:#fff;padding:4px 8px}
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .reveal.on{opacity:1;transform:none}
@@ -395,6 +404,13 @@ footer a:hover{color:var(--oro-claro)}
           <li>Asesoramiento para inversores</li>
           <li>Operaciones en todo el país</li>
         </ul>
+        <div class="certificaciones">
+          <span>Aprobados por</span>
+          <div class="logos">
+            <img src="logocampo/ccpise.png" alt="Logo CCPISE">
+            <img src="logocampo/cair.png" alt="Logo CAIR">
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -494,6 +510,17 @@ footer a:hover{color:var(--oro-claro)}
 <footer>
   <div class="wrap">
     <span>© 2026 Sueños Dorados Inmobiliaria — Santiago del Estero, Argentina</span>
+    <div class="social">
+      <a href="https://www.instagram.com/inmobiliaria.sdorados/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61584527320766" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@inmobiliaria.sdorados" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-3v13.5a3 3 0 1 1-2.2-2.9V9.4a6.2 6.2 0 1 0 5.2 6.1V8.8a7.6 7.6 0 0 0 4.5 1.5V7A4.6 4.6 0 0 1 16.5 2Z"/></svg>
+      </a>
+    </div>
     <span>Sitio por <a href="#" rel="noopener">Dosbit</a></span>
   </div>
 </footer>
