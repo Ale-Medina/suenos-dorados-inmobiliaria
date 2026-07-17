@@ -167,8 +167,6 @@ section{padding:104px 0 88px}
 .precio small{font-size:.64rem;color:var(--gris);display:block;font-weight:500;letter-spacing:.1em}
 .ficha-foot a{font-size:.82rem;font-weight:700;color:var(--oro-osc)}
 .ficha-foot a:hover{text-decoration:underline}
-.nota-fotos{background:#EFEAD9;border-left:3px solid var(--oro);padding:10px 16px;font-size:.82rem;color:#5C5230;margin-top:28px;border-radius:0 4px 4px 0}
-
 /* ---------- Categorías destacadas (Urbano / Campos) ---------- */
 #categorias{background:var(--verde-2);color:#fff;position:relative;overflow:hidden}
 .categorias-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.5}
@@ -324,7 +322,7 @@ footer a:hover{color:var(--oro-claro)}
         <path d="M0 88 H400" stroke-width=".8" opacity=".4"/>
       </svg>
     </div>
-    <form class="buscador entra" onsubmit="event.preventDefault(); document.getElementById('propiedades').scrollIntoView({behavior:'smooth'});">
+    <form class="buscador entra">
       <div class="campo">
         <label for="op">Operación</label>
         <select id="op"><option>Venta</option><option>Alquiler</option></select>
@@ -365,7 +363,6 @@ footer a:hover{color:var(--oro-claro)}
     <div class="reveal" style="text-align:center;margin-top:34px">
       <button class="btn btn-borde" id="btn-ver-mas" type="button">Ver más propiedades</button>
     </div>
-    <div class="nota-fotos reveal">Estas fichas usan datos reales de publicaciones ya hechas por la inmobiliaria. En cuanto tengamos las fotos definitivas de cada propiedad, reemplazamos los fondos ilustrados por las imágenes reales.</div>
   </div>
 </section>
 
@@ -1025,6 +1022,8 @@ const PAGE_SIZE = 9;
 const gridProps = document.getElementById('grid-props');
 const btnVerMas = document.getElementById('btn-ver-mas');
 let filtroActivo = null;
+let filtroOperacion = null;
+let filtroZona = '';
 let visibles = PAGE_SIZE;
 
 // Navegación de la galería de fotos (delegada: las fichas se re-renderizan)
@@ -1045,7 +1044,17 @@ gridProps.addEventListener('click', (e) => {
 });
 
 function renderCatalogo() {
-  const filtradas = filtroActivo ? PROPIEDADES.filter(p => p.categoria === filtroActivo) : PROPIEDADES;
+  let filtradas = PROPIEDADES;
+  if (filtroActivo) filtradas = filtradas.filter(p => p.categoria === filtroActivo);
+  if (filtroOperacion) filtradas = filtradas.filter(p => p.operacion === filtroOperacion || p.operacion === 'venta-alquiler');
+  if (filtroZona) filtradas = filtradas.filter(p => p.zona.toLowerCase().includes(filtroZona));
+
+  if (!filtradas.length) {
+    gridProps.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--gris)">No encontramos propiedades con esos criterios. Probá con otra zona o categoría.</p>';
+    btnVerMas.style.display = 'none';
+    return;
+  }
+
   const mostrar = filtradas.slice(0, visibles);
   gridProps.innerHTML = mostrar.map(renderFicha).join('');
   gridProps.querySelectorAll('.reveal').forEach(el => io.observe(el));
@@ -1058,6 +1067,8 @@ tabs.forEach(tab => tab.addEventListener('click', () => {
   tabs.forEach(t => t.classList.remove('activo'));
   tab.classList.add('activo');
   filtroActivo = mapaCat[tab.textContent];
+  filtroOperacion = null;
+  filtroZona = '';
   visibles = PAGE_SIZE;
   renderCatalogo();
 }));
@@ -1065,6 +1076,24 @@ tabs.forEach(tab => tab.addEventListener('click', () => {
 btnVerMas.addEventListener('click', () => {
   visibles += PAGE_SIZE;
   renderCatalogo();
+});
+
+// Buscador del hero: filtra el catálogo por operación, tipo y zona
+const mapaTipoBuscador = {'Casa':'casa','Departamento':'departamento','Terreno / Lote':'terreno','Galpón / Local':'galpon-local','Campo / Estancia':'campo-finca'};
+const mapaOpBuscador = {'Venta':'venta','Alquiler':'alquiler'};
+const tabPorCategoria = {casa:'Casas', departamento:'Departamentos', terreno:'Terrenos', 'galpon-local':'Galpones', 'campo-finca':'Campos'};
+document.querySelector('.buscador').addEventListener('submit', (e) => {
+  e.preventDefault();
+  filtroActivo = mapaTipoBuscador[document.getElementById('tipo').value] || null;
+  filtroOperacion = mapaOpBuscador[document.getElementById('op').value] || null;
+  filtroZona = document.getElementById('zona').value.trim().toLowerCase();
+  visibles = PAGE_SIZE;
+
+  const nombreTab = tabPorCategoria[filtroActivo] || 'Todas';
+  tabs.forEach(t => t.classList.toggle('activo', t.textContent === nombreTab));
+
+  renderCatalogo();
+  document.getElementById('propiedades').scrollIntoView({ behavior: 'smooth' });
 });
 
 renderCatalogo();
