@@ -567,15 +567,18 @@ const PROPIEDADES = [
 
   { titulo:'Galpón Comercial', operacion:'alquiler', categoria:'galpon-local',
     zona:'Congreso al 400, entre Santa Fe y Granadero Saavedra — Capital',
-    specs:[['Superficie','600 m²'],['Oficina','4x4'],['Baño','1'],['Uso ideal','Depósito / logística']] },
+    specs:[['Superficie','600 m²'],['Oficina','4x4'],['Baño','1'],['Uso ideal','Depósito / logística']],
+    fotos:fotosDe('congreso400', 1) },
 
   { titulo:'Campo — 1.000 Hectáreas', operacion:'venta', categoria:'campo-finca',
     zona:'Zona Los Juríes — Santiago del Estero',
-    specs:[['Superficie','1.000 ha'],['Uso','Agrícola — soja / cereales'],['Estado','Trabajado, listo para producir'],['Perfil','Inversión / escala']] },
+    specs:[['Superficie','1.000 ha'],['Uso','Agrícola — soja / cereales'],['Estado','Trabajado, listo para producir'],['Perfil','Inversión / escala']],
+    fotos:fotosDe('campojuries', 5) },
 
   { titulo:'Estancia Ganadera', operacion:'venta', categoria:'campo-finca',
     zona:'Depto. Patiño, acceso Ruta Prov. 23 y 601 — Formosa',
-    specs:[['Pasturas','Clavel y Pangola'],['Receptividad','≈ 4.000 vacunos'],['Aguadas','Sí, apotrerado'],['Caminos','Amplia red interior']] },
+    specs:[['Pasturas','Clavel y Pangola'],['Receptividad','≈ 4.000 vacunos'],['Aguadas','Sí, apotrerado'],['Caminos','Amplia red interior']],
+    fotos:fotosDe('dptopatino', 4) },
 
   // -------- Casas — Venta --------
   { titulo:'Casa 5 Ambientes', operacion:'venta', categoria:'casa',
@@ -670,16 +673,13 @@ const PROPIEDADES = [
 
   { titulo:'Propiedad con Local Comercial', operacion:'venta', categoria:'galpon-local',
     zona:'Av. 9 de Julio 275 — Capital',
-    specs:[['Frente','7 m'],['Profundidad','26 m']] },
+    specs:[['Frente','7 m'],['Profundidad','26 m']],
+    fotos:fotosDe('julio275', 1) },
 
   { titulo:'Casa en Córdoba', operacion:'venta', categoria:'casa',
     zona:'Provincia de Córdoba',
     specs:[], descripcion:'Consultar detalles.',
     fotos:fotosDe('casacordoba', 8) },
-
-  { titulo:'Hotel en Actividad', operacion:'venta', categoria:'galpon-local',
-    zona:'Ubicación a consultar',
-    specs:[['Estado','Totalmente equipado y en funcionamiento'],['Rentabilidad','Alta'],['Potencial','Turístico']] },
 
   // -------- Casas — Alquiler --------
   { titulo:'Casa en Bº Cabildo', operacion:'alquiler', categoria:'casa',
@@ -761,43 +761,53 @@ const PROPIEDADES = [
   // -------- Locales y Galpones --------
   { titulo:'Salón Comercial', operacion:'alquiler', categoria:'galpon-local',
     zona:'Calle Salta 572',
-    specs:[['Superficie','Aprox. 3 x 3 m'],['Ideal para','Oficina, consultorio o emprendimiento']] },
+    specs:[['Superficie','Aprox. 3 x 3 m'],['Ideal para','Oficina, consultorio o emprendimiento']],
+    fotos:fotosDe('salta572', 2) },
 
   { titulo:'Local Comercial en Salta', operacion:'alquiler', categoria:'galpon-local',
     zona:'Salta 572, entre Roca y Gorriti',
-    specs:[['Superficie','80 m²']] },
+    specs:[['Superficie','80 m²']],
+    fotos:fotosDe('salta572l', 4) },
 
   { titulo:'Local en 9 de Julio', operacion:'alquiler', categoria:'galpon-local',
     zona:'9 de Julio 579, entre Roca y Olaechea',
-    specs:[['Superficie','18 m² aprox'],['Ideal para','Emprendimientos u oficinas']] },
+    specs:[['Superficie','18 m² aprox'],['Ideal para','Emprendimientos u oficinas']],
+    fotos:fotosDe('julio579', 2) },
 
   { titulo:'Salón en Avellaneda', operacion:'alquiler', categoria:'galpon-local',
     zona:'Avellaneda al 300',
-    specs:[['Superficie','300 m²'],['Baños','2'],['Extras','Kitchenette'],['Uso','Múltiples usos']] },
+    specs:[['Superficie','300 m²'],['Baños','2'],['Extras','Kitchenette'],['Uso','Múltiples usos']],
+    fotos:fotosDe('avellaneda300', 7) },
 
   { titulo:'Local en Galería Vía Bianca', operacion:'alquiler', categoria:'galpon-local',
     zona:'Independencia 187, Galería Vía Bianca',
-    specs:[['Medidas','4,50 x 5 m'],['Perfil','Buen movimiento y visibilidad']] },
+    specs:[['Medidas','4,50 x 5 m'],['Perfil','Buen movimiento y visibilidad']],
+    fotos:fotosDe('independencia187', 1) },
 
   { titulo:'Local Comercial en Av. Pedro León Gallo', operacion:'alquiler', categoria:'galpon-local',
     zona:'Av. Pedro León Gallo 673',
-    specs:[] },
+    specs:[],
+    fotos:fotosDe('pedroleongallo673', 4) },
 
   { titulo:'Local Comercial en Av. Moreno', operacion:'venta', categoria:'galpon-local',
     zona:'Av. Moreno',
-    specs:[['Medidas','11 x 40 m'],['Divisiones','2'],['Baños','2'],['Extras','Oficinas']] },
+    specs:[['Medidas','11 x 40 m'],['Divisiones','2'],['Baños','2'],['Extras','Oficinas']],
+    fotos:fotosDe('avmoreno', 3) },
 
   { titulo:'Galpón en Bº El Cruce', operacion:'alquiler', categoria:'galpon-local',
     zona:'Magdalenas 660 esq. Triunvirato, Bº El Cruce — La Banda',
-    specs:[['Medidas','10 x 15 m'],['Oficina','2 x 2 m'],['Baño','1']] },
+    specs:[['Medidas','10 x 15 m'],['Oficina','2 x 2 m'],['Baño','1']],
+    fotos:fotosDe('magdalenas660', 3) },
 
   { titulo:'Galpón en Ruta 1, Los Romanos', operacion:'venta', categoria:'galpon-local',
     zona:'Ruta 1 — Los Romanos',
-    specs:[['Medidas','12 x 30 m, con entrepiso'],['Estado','Excelente'],['Uso','Adaptable a distintos rubros']] },
+    specs:[['Medidas','12 x 30 m, con entrepiso'],['Estado','Excelente'],['Uso','Adaptable a distintos rubros']],
+    fotos:fotosDe('galponr1', 2) },
 
   { titulo:'Cancha de Fútbol 5', operacion:'alquiler', categoria:'galpon-local',
     zona:'Calle Ecuador — La Banda',
-    specs:[['Extras','Asador'],['Baño','Completo'],['Espacio','Amplio, recreativo']] },
+    specs:[['Extras','Asador'],['Baño','Completo'],['Espacio','Amplio, recreativo']],
+    fotos:fotosDe('calleecuador', 7) },
 
   // -------- Lotes y Terrenos — Venta --------
   { titulo:'Lotes 35x50 junto a El Timbó', operacion:'venta', categoria:'terreno',
@@ -853,51 +863,63 @@ const PROPIEDADES = [
   // -------- Campos, Fincas y Estancias — Venta --------
   { titulo:'Finca en La Dársena', operacion:'venta', categoria:'campo-finca',
     zona:'La Dársena',
-    specs:[['Dormitorios','2'],['Baños','2 + antebaño'],['Ambientes','Living amplio, comedor, cocina c/gas subterráneo'],['Exterior','Depósito, patios y piscina']] },
+    specs:[['Dormitorios','2'],['Baños','2 + antebaño'],['Ambientes','Living amplio, comedor, cocina c/gas subterráneo'],['Exterior','Depósito, patios y piscina']],
+    fotos:fotosDe('fincaladarsena', 10) },
 
   { titulo:'Finca en Vuelta la Barranca', operacion:'venta', categoria:'campo-finca',
     zona:'Vuelta la Barranca',
-    specs:[['Medidas','25 x 50 m'],['Exterior','Piscina revestida, quincho cerrado'],['Perímetro','Alambrado']] },
+    specs:[['Medidas','25 x 50 m'],['Exterior','Piscina revestida, quincho cerrado'],['Perímetro','Alambrado']],
+    fotos:fotosDe('vueltalabarranca', 5) },
 
   { titulo:'Finca en Barrio Jardín', operacion:'venta', categoria:'campo-finca',
     zona:'Barrio Jardín (Los Pinos)',
-    specs:[] },
+    specs:[],
+    fotos:fotosDe('barriojardin', 7) },
 
   { titulo:'Finca en Alquiler de Verano', operacion:'alquiler', categoria:'campo-finca',
     zona:'Ubicación a consultar',
-    specs:[['Modalidad','Temporada de verano']] },
+    specs:[['Modalidad','Temporada de verano']],
+    fotos:fotosDe('fincaverano', 3) },
 
   { titulo:'Campo 150 Hectáreas', operacion:'venta', categoria:'campo-finca',
     zona:'Remes Sud',
-    specs:[['Superficie','150 hectáreas']] },
+    specs:[['Superficie','150 hectáreas']],
+    fotos:fotosDe('campo150h', 3) },
 
   { titulo:'Campo 624 Hectáreas', operacion:'venta', categoria:'campo-finca',
     zona:'Ubicación a consultar',
-    specs:[['Superficie','624 hectáreas']] },
+    specs:[['Superficie','624 hectáreas']],
+    fotos:fotosDe('campo624h', 3) },
 
   { titulo:'Campo 1.400 Hectáreas', operacion:'venta', categoria:'campo-finca',
     zona:'Departamento Ibarra',
-    specs:[['Superficie','1.400 hectáreas'],['Perfil','Gran inversión']] },
+    specs:[['Superficie','1.400 hectáreas'],['Perfil','Gran inversión']],
+    fotos:fotosDe('campo1400h', 1) },
 
   { titulo:'Campo Agrícola 1.949 Hectáreas', operacion:'venta', categoria:'campo-finca',
     zona:'Zona de alta productividad',
-    specs:[['Superficie','1.949 hectáreas'],['Uso','Agrícola'],['Acceso','Ruta pavimentada']] },
+    specs:[['Superficie','1.949 hectáreas'],['Uso','Agrícola'],['Acceso','Ruta pavimentada']],
+    fotos:fotosDe('campo1949h', 5) },
 
   { titulo:'Campo 300 Hectáreas', operacion:'venta', categoria:'campo-finca',
     zona:'Ciudad de Fernández',
-    specs:[['Superficie','300 hectáreas limpias']] },
+    specs:[['Superficie','300 hectáreas limpias']],
+    fotos:fotosDe('campo300h', 5) },
 
   { titulo:'Campo 459 Hectáreas', operacion:'venta', categoria:'campo-finca',
     zona:'Sobre Ruta Nacional 64',
-    specs:[['Superficie','459 hectáreas']] },
+    specs:[['Superficie','459 hectáreas']],
+    fotos:fotosDe('campo459h', 3) },
 
   { titulo:'Campo 275 Hectáreas', operacion:'venta', categoria:'campo-finca',
     zona:'Zona Chaco, al norte del Dpto. Río Primero — Córdoba',
-    specs:[['Superficie','275 hectáreas']] },
+    specs:[['Superficie','275 hectáreas']],
+    fotos:fotosDe('campo275h', 5) },
 
   { titulo:'Estancia Mixta 3.570 Hectáreas', operacion:'venta', categoria:'campo-finca',
     zona:'Zona Tobas — Santiago del Estero',
-    specs:[['Superficie','3.570 hectáreas'],['Perfil','Campo mixto']] },
+    specs:[['Superficie','3.570 hectáreas'],['Perfil','Campo mixto']],
+    fotos:fotosDe('estanciamixta', 6) },
 ];
 
 // id (slug) único + rotación de fondos ph-1..ph-4
